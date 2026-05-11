@@ -15,5 +15,5 @@ output "server_public_ip" {
 }
 
 output "server_instance_id" {
-    value = aws_instance.terraform_cloud_demo.instance_id
+    value = aws_instance.terraform_cloud_demo.id
 }
