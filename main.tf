@@ -1,8 +1,13 @@
 provider "aws" {
 }
 
+variable "instance_count" {
+    type    = number
+    default = 1
+}
+
 resource "aws_instance" "terraform_cloud_demo" {
-    count         = 3
+    count         = var.instance_count
     instance_type = "t3.micro"
     ami           = "ami-0fe18bc3cfa53a248"
 }
