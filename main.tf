@@ -12,7 +12,7 @@ variable "common_tags" {
 
 resource "aws_instance" "terraform_cloud_demo" {
     count         = var.instance_count
-    instance_type = "t3.micro"
+    instance_type = var.instance_type
     ami           = "ami-0fe18bc3cfa53a248"
     tags          = var.common_tags
 }
