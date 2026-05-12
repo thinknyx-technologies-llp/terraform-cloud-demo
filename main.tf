@@ -2,6 +2,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "terraform_cloud_demo" {
+    count         = 2
     instance_type = "t3.micro"
     ami           = "ami-0fe18bc3cfa53a248"
 }
