@@ -23,7 +23,7 @@ resource "aws_instance" "terraform_cloud_demo" {
     instance_type = var.instance_type
     ami           = var.ami
     tags          = var.common_tags
-    keypair       = "kul"
+    key_name      = "kul"
 }
 
 output "server_private_ip" {
