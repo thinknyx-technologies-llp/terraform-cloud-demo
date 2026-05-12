@@ -6,10 +6,15 @@ variable "instance_count" {
     default = 1
 }
 
+variable "common_tags" {
+    type = map(string)
+}
+
 resource "aws_instance" "terraform_cloud_demo" {
     count         = var.instance_count
     instance_type = "t3.micro"
     ami           = "ami-0fe18bc3cfa53a248"
+    tags          = var.common_tags
 }
 
 output "server_private_ip" {
