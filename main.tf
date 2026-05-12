@@ -10,6 +10,10 @@ variable "common_tags" {
     type = map(string)
 }
 
+variable "instance_type" {
+    type = string
+}
+
 resource "aws_instance" "terraform_cloud_demo" {
     count         = var.instance_count
     instance_type = var.instance_type
