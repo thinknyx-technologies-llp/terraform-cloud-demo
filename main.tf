@@ -14,10 +14,14 @@ variable "instance_type" {
     type = string
 }
 
+variable "ami" {
+    type = string
+}
+
 resource "aws_instance" "terraform_cloud_demo" {
     count         = var.instance_count
     instance_type = var.instance_type
-    ami           = "ami-0fe18bc3cfa53a248"
+    ami           = var.ami
     tags          = var.common_tags
 }
 
